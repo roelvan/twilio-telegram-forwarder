@@ -1,8 +1,7 @@
 import sendNotification from "../telegram";
 
 const handler = async (req, res) => {
-  console.log(req.body);
-  await sendNotification(JSON.stringify(req.body));
+  await sendNotification(`💌 ${req.body.From}: ${req.body.Body}`);
   res.send({});
 };
 
